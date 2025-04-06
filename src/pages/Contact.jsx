@@ -4,7 +4,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaFacebook } from 'rea
 
 function Contact({ content }) {
   const facebookUrl = "https://www.facebook.com/dovile.miciukeviciute";
-  const linkedinUrl = "https://www.linkedin.com/in/tavo-profilis"; // <-- PAKEISTI!
+  const linkedinUrl = "https://www.linkedin.com/in/dovile-miciukeviciute/"; // <-- PAKEISTI!
 
   return (
     <div className="mt-10 max-w-3xl mx-auto px-4 mb-10">
