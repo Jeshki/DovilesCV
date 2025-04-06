@@ -6,7 +6,7 @@ function Footer({ content }) {
     const currentYear = new Date().getFullYear();
     // Nuorodos (įsitikinkite, kad LinkedIn nuoroda teisinga)
     const facebookUrl = "https://www.facebook.com/dovile.miciukeviciute";
-    const linkedinUrl = "https://www.linkedin.com/in/tavo-profilis"; // <-- PAKEISTI!
+    const linkedinUrl = "https://www.linkedin.com/in/dovile-miciukeviciute/"; // <-- PAKEISTI!
 
     return (
         // <<< Pakeistas Footer fonas ir teksto spalvos >>>
