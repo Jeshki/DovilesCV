@@ -1,53 +1,45 @@
 /// src/components/Footer.jsx
 import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaFacebook } from 'react-icons/fa';
+// Import Lucide icons
+import { Mail, Phone, MapPin, Linkedin, Facebook } from 'lucide-react';
 
 function Footer({ content }) {
     const currentYear = new Date().getFullYear();
-    // Nuorodos (įsitikinkite, kad LinkedIn nuoroda teisinga)
     const facebookUrl = "https://www.facebook.com/dovile.miciukeviciute";
-    const linkedinUrl = "https://www.linkedin.com/in/dovile-miciukeviciute/"; // <-- PAKEISTI!
+    const linkedinUrl = content.linkedInUrl || "https://www.linkedin.com/in/deividaschomicius/";
 
     return (
-        // <<< Pakeistas Footer fonas ir teksto spalvos >>>
-        <footer className="mt-12 md:mt-20 p-6 text-center bg-green-100 dark:bg-green-900 text-sm"> {/* Naujas fonas: bg-green-100 */}
-            {/* Kontaktai ir socialiniai tinklai */}
+        <footer className="mt-12 md:mt-20 p-6 text-center bg-blue-100 dark:bg-blue-900 text-sm">
              <div className="flex flex-wrap justify-center items-center gap-x-4 gap-y-2 mb-4">
-                {/* El. Paštas */}
                 {content.email && (
-                     <a href={`mailto:${content.email}`} className="flex items-center gap-1 text-green-800 dark:text-green-200 hover:text-green-600 dark:hover:text-green-300 transition-colors"> {/* Pakeista šviesaus režimo teksto spalva */}
-                         <FaEnvelope /> {content.email}
+                     <a href={`mailto:${content.email}`} className="flex items-center gap-1 text-blue-800 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-300 transition-colors">
+                         <Mail size={16} /> {content.email} {/* Lucide Icon */}
                      </a>
                  )}
-                 {/* Telefonas */}
                  {content.phone && (
-                     <span className="flex items-center gap-1 text-green-800 dark:text-green-200"> {/* Pakeista šviesaus režimo teksto spalva */}
-                         <FaPhone /> {content.phone}
+                     <span className="flex items-center gap-1 text-blue-800 dark:text-stone-200">
+                         <Phone size={16} /> {content.phone} {/* Lucide Icon */}
                      </span>
                  )}
-                 {/* Vietovė */}
                  {content.location && (
-                      <span className="flex items-center gap-1 text-green-800 dark:text-green-200"> {/* Pakeista šviesaus režimo teksto spalva */}
-                         <FaMapMarkerAlt /> {content.location}
+                      <span className="flex items-center gap-1 text-blue-800 dark:text-stone-200">
+                         <MapPin size={16} /> {content.location} {/* Lucide Icon */}
                      </span>
                  )}
-                 {/* LinkedIn */}
                  <a
                     href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profilis"
-                    className="flex items-center gap-1 text-green-800 dark:text-green-200 hover:text-green-600 dark:hover:text-green-300 transition-colors" // Pakeista šviesaus režimo teksto spalva
+                    className="flex items-center gap-1 text-blue-800 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
                  >
-                    <FaLinkedin /> LinkedIn
+                    <Linkedin size={16} /> LinkedIn {/* Lucide Icon */}
                  </a>
-                 {/* Facebook */}
                  <a
                     href={facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook profilis"
-                    className="flex items-center gap-1 text-green-800 dark:text-green-200 hover:text-green-600 dark:hover:text-green-300 transition-colors" // Pakeista šviesaus režimo teksto spalva
+                    className="flex items-center gap-1 text-blue-800 dark:text-stone-200 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
                  >
-                    <FaFacebook /> Facebook
+                    <Facebook size={16} /> Facebook {/* Lucide Icon */}
                  </a>
              </div>
-            {/* Copyright */}
-            <p className="text-green-700 dark:text-green-300">&copy; {currentYear} {content.name}. {content.footerText}</p> {/* Pakeistos teksto spalvos */}
+            <p className="text-blue-700 dark:text-stone-300">&copy; {currentYear} {content.name}. {content.footerText}</p>
         </footer>
     );
 }
